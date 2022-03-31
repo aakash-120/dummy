@@ -1,0 +1,49 @@
+<?php
+echo "<h1>Allow</h1><br><br>";
+
+$html = '';
+$html2 = '<form action="/secure/allowedaddtodb" method="post">';
+$html2 .= "<h3>Role</h3>";
+$html2 .= '<select name="role" id="cars">';
+foreach ($d2 as $k => $v) {
+    $html2 .= ' <option value=' . $v->id . '>' . $v->role . '</option>';
+}
+$html2 .= '<select><br><br>';
+
+
+
+$html3 = '';
+foreach ($d3 as $k3 => $v3) {
+    $html3 .= '<div class="row"><h4>' . $k3 . '
+</h4><div class="col-12">';
+    foreach ($v3 as $k4 => $v4) {
+        $html3 .= '<div class="col-12">
+    <div class="form-check form-check-inline ms-3">
+        <input type="checkbox" class="form-check-input" name='.$k3.'_'.$v4.' id="Default_Price" value="1" >
+        <label class="form-check-label" for="Default_Price">' . $v4 . '</label>
+    </div>
+
+</div>';
+    }
+    $html3 .= ' <br></div><br>
+   </div>';
+}
+$html3 .= '<input type="submit" name="submit"></form>';
+$html = $html2 . $html3;
+echo $html;
+
+
+
+ 
+
+
+
+
+// $html .= "<br><br>";
+// $html .= "<h3>Components</h3>";
+// $html .= '<select name="available_product" id="cars">';
+// foreach ($d as $k => $v) {
+//     $html .= ' <option value='.$v->controller_id.'>'.$v->controller.'</option>';
+// }
+//     $html .= '<select>';
+//     echo $html;
